@@ -1,12 +1,14 @@
 import streamlit as st
+import numpy as np
 import sklearn
 import pickle
 
 st.title("REVENUE PREDICTION")
 a = st.number_input('Input Temperature')
-list = []
-list.append(a)
-b = np.array(list)
+# list = []
+# list.append(a)
+# b = np.array(list)
+a = np.array([a])
 model = pickle.load(open('model.pickle', "rb"))
 x_new = b.reshape(-1, 1)
 y_new = model.predict(x_new)
