@@ -6,6 +6,8 @@ st.title("REVENUE PREDICTION")
 a = st.number_input('Input Temperature')
 
 model = pickle.load(open('model.pickle', "rb"))
-y_new = model.predict(a)
+x_new = a.reshape(-1, 1)
+y_new = model.predict(x_new)
+
 if st.button('Predict'):
   st.write(y_new)
