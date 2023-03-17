@@ -5,7 +5,7 @@ import pickle
 st.title("REVENUE PREDICTION")
 a = st.number_input('Input Temperature')
 
-a = np.array(a)
+a = np.array([a])
 model = pickle.load(open('model.pickle', "rb"))
 x_new = a.reshape(-1, 1)
 y_new = model.predict(x_new)
